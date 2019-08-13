@@ -35,6 +35,24 @@
 
 
 - java中的内部类
+定义：将一个类的定义放在另一个类的定义内部，即为内部类。
+
+内部类本质上是java的一种"语法糖"。
+```
+public class A {
+    private int a;
+    static class B {
+ 
+    }
+ 
+    class C {
+        public void test(){
+            int b  = a;
+        }
+    }
+}
+```
+类A是一个普通的类，在他的内部定义了两个类B，以及C。从代码结构上来看，B类和C类为A类的内部，但是在使用编译器编译之后，它们并不是一个类，而是会变成符合一定名称规则的三个类，在编译之后会产生三个.class文件，分别是：A.class, A$B.class, A$C.class。
 
 ## 关于类Collections,Arrays,Objects
 
